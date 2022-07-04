@@ -3,20 +3,35 @@ table:not(TableHeader) {
 }
 
 .ContractButton {
-    width : 100px;
+    width : 20%;
+    text-align: center;
 }
 
-.ButtonToPrintPopUp {
-    position: absolute;
-    top: 50%;
-    left: 90%
+.ContractButton button{
+    width : 100%;
+    height : 50px;
 }
 
-.ButtonToEntirePage {
-    position: absolute;
-    top: 50%;
-    right: 90%
+.ButtonsBar {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
 }
+.ButtonsHeaderBar {
+    top: 0; 
+    justify-content: space-between;
+}
+
+.ButtonsFooterBar {
+    bottom: 0;
+    justify-content: center;
+}
+
 .Page {
     position : relative;
     width : 21cm;
