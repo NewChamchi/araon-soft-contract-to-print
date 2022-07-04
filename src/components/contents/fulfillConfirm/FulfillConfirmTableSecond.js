@@ -1,11 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useContext } from 'react';
+import YesOrNoCheckBoxContext from '../../../contexts/YesOrNoCheckBoxContext';
 import SignatureVerifyArea from '../../signature/SignatureVerifyArea';
 import './FulfillConfirm.css';
 
-const YesOrNoCheckBox = ({ componentIndex, yesOrNoStore, setYesOrNoStore }) => {
+const YesOrNoCheckBox = ({ componentIndex }) => {
     const yesRef = useRef();
     const noRef = useRef();
-
+    const { state, actions } = useContext(YesOrNoCheckBoxContext);
     const clickYes = () => {
         if (yesRef.current.checked == true && noRef.current.checked == true) {
             noRef.current.checked = false;
@@ -21,23 +22,23 @@ const YesOrNoCheckBox = ({ componentIndex, yesOrNoStore, setYesOrNoStore }) => {
     }
 
     const saveYesOrNoCheckedState = () => {
-        setYesOrNoStore([
-            ...yesOrNoStore.slice(0, componentIndex),
+        actions.setYesOrNoCheckBoxStore([
+            ...state.yesOrNoCheckBoxStore.slice(0, componentIndex),
             {
                 isYesChecked: yesRef.current.checked,
                 isNoChecked: noRef.current.checked
             },
-            ...yesOrNoStore.slice(componentIndex + 1, yesOrNoStore.length)
+            ...state.yesOrNoCheckBoxStore.slice(componentIndex + 1, state.yesOrNoCheckBoxStore.length)
         ]);
     }
 
     return (
         <div className='YesOrNoCheckBox'>
-            {(yesOrNoStore[componentIndex].isYesChecked) ?
+            {(state.yesOrNoCheckBoxStore[componentIndex].isYesChecked) ?
             <input type="checkbox" onClick={clickYes} ref={yesRef} checked/> :
             <input type="checkbox" onClick={clickYes} ref={yesRef}/>}예&nbsp;
 
-            {(yesOrNoStore[componentIndex].isNoChecked) ?
+            {(state.yesOrNoCheckBoxStore[componentIndex].isNoChecked) ?
             <input type="checkbox" onClick={clickNo} ref={noRef} checked/> :
             <input type="checkbox" onClick={clickNo} ref={noRef}/>}아니오&nbsp;
         </div>
@@ -46,7 +47,7 @@ const YesOrNoCheckBox = ({ componentIndex, yesOrNoStore, setYesOrNoStore }) => {
 }
 
 
-const FulfillConfirmTableSecond = ({ canvasStore, setCanvasStore, yesOrNoStore, setYesOrNoStore}) => {
+const FulfillConfirmTableSecond = () => {
     let now = new Date();
     return (
         <div className='FulfillConfirm FulfillConfirmTableSecond'>
@@ -75,10 +76,7 @@ const FulfillConfirmTableSecond = ({ canvasStore, setCanvasStore, yesOrNoStore, 
                         보험대리점이 대리하는 보험회사의 명칭 및 업무내용(위탁판매)을 들으셨습니까?
                         (금소법 제26조 제1항 제1호)
                     </td>
-                    <td><YesOrNoCheckBox
-                        componentIndex={0}
-                        yesOrNoStore={yesOrNoStore}
-                        setYesOrNoStore={setYesOrNoStore} /></td>
+                    <td><YesOrNoCheckBox componentIndex={0}/></td>
                 </tr>
                 <tr >
                     <td>2</td>
@@ -86,10 +84,7 @@ const FulfillConfirmTableSecond = ({ canvasStore, setCanvasStore, yesOrNoStore, 
                         여러 보험회사의 상품을 취급하는지 들으셨습니까?
                         (금소법 제26조 제1항 제2호)
                     </td>
-                    <td><YesOrNoCheckBox
-                        componentIndex={1}
-                        yesOrNoStore={yesOrNoStore}
-                        setYesOrNoStore={setYesOrNoStore} /></td>
+                    <td><YesOrNoCheckBox componentIndex={1}/></td>
                 </tr>
                 <tr >
                     <td>3</td>
@@ -98,10 +93,7 @@ const FulfillConfirmTableSecond = ({ canvasStore, setCanvasStore, yesOrNoStore, 
                         고객에게 손해를 발생시킨 경우 설계사 및 보험회사 등은 손해를 배상할 책임이 있음을
                         들으셨습니까? (금소법 제26조 제1항 제1호)
                     </td>
-                    <td><YesOrNoCheckBox
-                        componentIndex={2}
-                        yesOrNoStore={yesOrNoStore}
-                        setYesOrNoStore={setYesOrNoStore} /></td>
+                    <td><YesOrNoCheckBox componentIndex={2}/></td>
                 </tr>
                 <tr >
                     <td>4</td>
@@ -110,10 +102,7 @@ const FulfillConfirmTableSecond = ({ canvasStore, setCanvasStore, yesOrNoStore, 
                         해지 등 계약에 관한 의사표시를 수령할 수 있는 권한이 없음을 들으셨습니까? (금소법
                         시행령 제24조 제1항 제1호)
                     </td>
-                    <td><YesOrNoCheckBox
-                        componentIndex={3}
-                        yesOrNoStore={yesOrNoStore}
-                        setYesOrNoStore={setYesOrNoStore} /></td>
+                    <td><YesOrNoCheckBox componentIndex={3}/></td>
                 </tr>
                 <tr >
                     <td>5</td>
@@ -121,10 +110,7 @@ const FulfillConfirmTableSecond = ({ canvasStore, setCanvasStore, yesOrNoStore, 
                         소비자의 신용정보 및 개인정보는 보험회사가 보유 • 관리한다는 사실여부를 들으셨습니까?
                         (금소법 시행령 제24조 제1항 제3호)
                     </td>
-                    <td><YesOrNoCheckBox
-                        componentIndex={4}
-                        yesOrNoStore={yesOrNoStore}
-                        setYesOrNoStore={setYesOrNoStore} /></td>
+                    <td><YesOrNoCheckBox componentIndex={4}/></td>
                 </tr>
                 <tr >
                     <td>6</td>
@@ -134,18 +120,12 @@ const FulfillConfirmTableSecond = ({ canvasStore, setCanvasStore, yesOrNoStore, 
                         )에서 확인할 수 있는 사실을 들으셨습니까?
                         (금소법 감독규정 제23조 제1항 제2호)
                     </td>
-                    <td><YesOrNoCheckBox
-                        componentIndex={5}
-                        yesOrNoStore={yesOrNoStore}
-                        setYesOrNoStore={setYesOrNoStore} /></td>
+                    <td><YesOrNoCheckBox componentIndex={5}/></td>
                 </tr>
                 <tr >
                     <td>7</td>
                     <td>보험설계사의 등록증명서(증표)을 확인하셨습니까? (금소법 제26조 제2항)</td>
-                    <td><YesOrNoCheckBox
-                        componentIndex={6}
-                        yesOrNoStore={yesOrNoStore}
-                        setYesOrNoStore={setYesOrNoStore} /></td>
+                    <td><YesOrNoCheckBox componentIndex={6}/></td>
                 </tr>
                 <tr>
                     <td colSpan={3} style={{ paddingTop: "0", paddingBottom: "0" }}>
@@ -175,12 +155,12 @@ const FulfillConfirmTableSecond = ({ canvasStore, setCanvasStore, yesOrNoStore, 
                             보험계약자 :&emsp;
                             <span style={{ position: "relative" }}>
                                 &emsp;&emsp;&emsp;&emsp;&emsp;
-                                <SignatureVerifyArea drawIndex={4} canvasStore={canvasStore} setCanvasStore={setCanvasStore} />
+                                <SignatureVerifyArea drawBoxIndex={4}/>
                             </span>
                             <span className="SetColorGray" style={{ width: "200px" }}>
                                 <span style={{ position: "relative" }}>
                                     &emsp;(서명)
-                                    <SignatureVerifyArea drawIndex={5} canvasStore={canvasStore} setCanvasStore={setCanvasStore} />
+                                    <SignatureVerifyArea drawBoxIndex={5}/>
                                 </span>
                             </span>
                         </p>

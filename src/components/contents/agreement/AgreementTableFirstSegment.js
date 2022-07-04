@@ -2,18 +2,18 @@ import React, { Fragment } from 'react';
 import SignatureVerifyArea from '../../signature/SignatureVerifyArea';
 import './Agreement.css';
 
-const AgreementTableFirstSegment = ({ Contracter, drawIndex, canvasStore, setCanvasStore }) => {
-    const basicColumnWidth = 1.5;
+const AgreementTableFirstSegment = ({ Writer, drawBoxIndex }) => {
+    const basicTableDataWidthCM = 1.5;
 
-    const ColumnWidthToString = (mutiple) => {
-        let column = mutiple * basicColumnWidth;
-        return column.toString() + "cm"
+    const TableDataWidthToString = (mutiple) => {
+        let calculatedTableDataWidth = mutiple * basicTableDataWidthCM;
+        return calculatedTableDataWidth.toString() + "cm"
     }
 
-    const ColumnWidthToObject = (mutiple) => {
-        let column = mutiple * basicColumnWidth;
+    const TableDataWidthToObject = (mutiple) => {
+        let calculatedTableDataWidth = mutiple * basicTableDataWidthCM;
         return {
-            width: column.toString() + "cm"
+            width: calculatedTableDataWidth.toString() + "cm"
         }
     }
 
@@ -28,19 +28,19 @@ const AgreementTableFirstSegment = ({ Contracter, drawIndex, canvasStore, setCan
                 <td rowSpan={3}
                     style={{
                         backgroundColor: "paleturquoise",
-                        width: ColumnWidthToString(1),
+                        width: TableDataWidthToString(1),
                         borderRight: "1px dashed black"
-                    }}>{Contracter}</td>
-                <td style={ColumnWidthToObject(1)}>주 소</td>
-                <td colSpan={5} style={ColumnWidthToObject(5)}></td>
-                <td style={ColumnWidthToObject(1)}>전화번호</td>
+                    }}>{Writer}</td>
+                <td style={TableDataWidthToObject(1)}>주 소</td>
+                <td colSpan={5} style={TableDataWidthToObject(5)}></td>
+                <td style={TableDataWidthToObject(1)}>전화번호</td>
                 <td colSpan={2}></td>
             </tr>
             <tr>
-                <td style={ColumnWidthToObject(1)}>성 명</td>
-                <td colSpan={2} style={ColumnWidthToObject(2)}></td>
-                <td style={ColumnWidthToObject(1)}>생년월일</td>
-                <td colSpan={3} style={ColumnWidthToObject(3)}>
+                <td style={TableDataWidthToObject(1)}>성 명</td>
+                <td colSpan={2} style={TableDataWidthToObject(2)}></td>
+                <td style={TableDataWidthToObject(1)}>생년월일</td>
+                <td colSpan={3} style={TableDataWidthToObject(3)}>
                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
                         <table className="DateOfBirthTable" style={{ width: "3.6cm", height: "0.55cm" }}><tr>
                             <td></td><td></td><td></td><td></td><td></td><td></td>
@@ -63,18 +63,22 @@ const AgreementTableFirstSegment = ({ Contracter, drawIndex, canvasStore, setCan
                 }}>
                     <span style={{ position: "relative" }}>
                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                        <SignatureVerifyArea drawIndex={drawIndex} canvasStore={canvasStore} setCanvasStore={setCanvasStore}/>
+                        <SignatureVerifyArea drawBoxIndex={drawBoxIndex}/>
                     </span>
                 </td>
             </tr>
             <tr>
-                <td colSpan={2} style={ColumnWidthToObject(2)}>법정대리인(친권인)</td>
-                <td style={{ borderRight: "none", width: ColumnWidthToString(1) }}></td>
+                <td colSpan={2} style={TableDataWidthToObject(2)}>법정대리인(친권인)</td>
+                <td style={{ borderRight: "none", width: TableDataWidthToString(1) }}></td>
                 <td colSpan={2}
-                    className="TextAlignRightAndColorGray"
-                    style={{ borderLeft: "none", width: ColumnWidthToString(2) }}>(서명)&ensp;</td>
-                <td colSpan={2} style={ColumnWidthToObject(2)}>법정대리인(친권인)</td>
-                <td colSpan={2} className="TextAlignRightAndColorGray">(서명)&ensp;</td>
+                    className="SetColorGray"
+                    style={{
+                        borderLeft: "none",
+                        textAlign: "right",
+                        width: TableDataWidthToString(2)
+                        }}>(서명)&ensp;</td>
+                <td colSpan={2} style={TableDataWidthToObject(2)}>법정대리인(친권인)</td>
+                <td colSpan={2} className="SetColorGray" style={{textAlign: "right"}}>(서명)&ensp;</td>
             </tr>
         </Fragment>
     )

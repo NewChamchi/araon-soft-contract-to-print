@@ -96,15 +96,16 @@ table:not(TableHeader) {
     color:rgb(250, 39, 88);
 }
 
-.VscCheckAbsolute {
-    position : absolute;
-    top : 0%;
-    left : 0%;
-}
 
 .VscCheckBlue {
     font-size: large;
     color: royalblue;
+}
+
+.VscCheckPositionAbsoluteForAlignTopLeft {
+    position : absolute;
+    top : 0%;
+    left : 0%;
 }
 
 .SetColorRed {

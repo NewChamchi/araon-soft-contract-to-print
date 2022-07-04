@@ -18,20 +18,20 @@ const CompareConfirmTableFifth = () => {
                         fontWeight: "lighter",
                         position: "relative"
                     }}>
-                        <VscCheck className='VscCheckBlue VscCheckAbsolute' /><span style={{ marginLeft: "75%" }}>지점</span></td>
+                        <VscCheck className='VscCheckBlue VscCheckPositionAbsoluteForAlignTopLeft' /><span style={{ marginLeft: "75%" }}>지점</span></td>
                     <td className="TableHeader" style={{ width: "2cm" }}>설계사</td>
                     <td style={{
                         width: "3cm",
                         position: "relative"
                     }}>
-                        <VscCheck className='VscCheckBlue VscCheckAbsolute' /></td>
+                        <VscCheck className='VscCheckBlue VscCheckPositionAbsoluteForAlignTopLeft' /></td>
                     <td className="SetColorGray" style={{
                         width: "1.5cm",
                         fontWeight: "lighter",
                         textAlign: "center",
                         position: "relative"
                     }}>
-                        <VscCheck className='VscCheckBlue VscCheckAbsolute' />(서명)
+                        <VscCheck className='VscCheckBlue VscCheckPositionAbsoluteForAlignTopLeft' />(서명)
                     </td>
                 </tr>
                 <tr>
@@ -42,14 +42,14 @@ const CompareConfirmTableFifth = () => {
                         width: "3cm",
                         position: "relative"
                     }}>
-                        <VscCheck className='VscCheckBlue VscCheckAbsolute' /></td>
+                        <VscCheck className='VscCheckBlue VscCheckPositionAbsoluteForAlignTopLeft' /></td>
                         <td className="SetColorGray" style={{
                         width: "1.5cm",
                         fontWeight: "lighter",
                         textAlign: "center",
                         position: "relative"
                     }}>
-                        <VscCheck className='VscCheckBlue VscCheckAbsolute' />(서명)
+                        <VscCheck className='VscCheckBlue VscCheckPositionAbsoluteForAlignTopLeft' />(서명)
                     </td>
                 </tr>
             </table>
