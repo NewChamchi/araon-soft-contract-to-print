@@ -1,0 +1,59 @@
+.SigCanvas {
+  width : 400px;
+  height : 200px;
+  border : 1px solid black;
+  text-align: center;
+}
+
+.SignatureCanvas {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.SignatureButtons {
+  display : flex;
+  width : 500px;
+  height : 50px;
+  justify-content : space-around;
+  align-items: center;
+}
+
+.SignatureButtons > * {
+  width : 100px;
+  height : 25px;
+}
+
+.SignaturePopUp {
+  display: flex;
+  width : 700px;
+  height : 300px;
+}
+
+.SignatureVerifyArea {
+  position : absolute;
+  width: 100%;
+  height: 100%;
+  left: -0%;
+}
+
+.SignatureVerifyAreaClickable {
+  width: 100%;
+  height: 100%;
+  display : flex;
+  justify-content : center;
+  align-items : center;
+}
+
+.SignatureLocation {
+  display: flex;
+  position : absolute;
+  font-size : 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignaturePaste {
+  width: 100%;
+  position : absolute;
+}

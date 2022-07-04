@@ -1,0 +1,67 @@
+
+.Agreement {
+    line-height: 0.45cm;
+}
+.Agreement h4 {
+    text-align: center;
+    background-color: skyblue;
+    padding: 10px;
+    margin: 0;
+}
+
+.Agreement h5 {
+    margin: 0.3cm 0 0.1cm 0.1cm;
+}
+
+.Agreement p, span{
+    font-size: small;
+}
+
+.Agreement p:not(.SkyBox) {
+    text-indent: -12px;
+    margin : 0 24px;
+}
+
+.Agreement table {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.Agreement caption {
+    font-size: small;
+}
+
+.Agreement td {
+    border: 0.1px solid black;
+}
+
+.Agreement table:not(.AgreementHeader) {
+    width : 100%;
+}
+
+.AgreementHeader {    
+}
+
+.AgreeCheck {
+    position: absolute;
+    bottom : 5px;
+    right : 20px;
+    font-weight: bold;
+}
+
+.DateOfBirthTable td {
+    border: 0.1px solid gainsboro;
+}
+
+.SkyBox {
+    background-color: paleturquoise;
+    margin: 0px;
+    padding : 5px 10px;
+    line-height: 18px;
+    position : relative;
+}
+
+.TextAlignRightAndColorGray {
+    text-align: right;
+    color: gainsboro;
+}

@@ -1,0 +1,74 @@
+.FulfillConfirm table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.5cm;
+}
+
+.FulfillConfirm caption {
+    text-align: left;
+    margin-bottom: 0.1cm;
+}
+
+.FulfillConfirm td {
+    border: 0.1px solid black;
+    padding: 0.15cm;
+}
+
+.FulfillConfirm a {
+    font-size: smaller;
+    color: royalblue;
+    text-decoration: none;
+}
+
+.FulfillConfirmHeading{
+    text-align: center;
+}
+.FulfillConfirmExplain {
+    line-height: 0.7cm;
+    font-size: small;
+}
+.FulfillConfirmTableFirst td:nth-child(2n+1) {
+    text-align: center;
+    font-weight: bolder;
+    font-size: smaller;
+    background-color: rgb(228, 227, 227);
+    width: 1.3cm;
+    height : 0.4cm;
+}
+
+.FulfillConfirmTableSecond {
+    line-height: 0.5cm;
+}
+
+.FulfillConfirmTableSecond td:nth-child(3n+1) {
+    text-align: center;
+}
+
+.FulfillConfirmTableSecond td:nth-child(3n) {
+    text-align: center;
+}
+
+.FulfillConfirmTableThird {
+    line-height: 0.45cm;
+}
+
+.FulfillConfirmTableFooter table {
+    text-align: center;
+}
+
+.TableHeader {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 14px;
+    background-color: rgb(228, 227, 227);
+}
+
+.TextUnderLine {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.TextUnderLineRedBold {
+    text-decoration-color: rgb(250, 39, 88); 
+    text-decoration-thickness: 2px;
+}

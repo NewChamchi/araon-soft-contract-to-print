@@ -1,0 +1,116 @@
+table:not(TableHeader) {
+    font-size: small;
+}
+
+.ContractButton {
+    width : 100px;
+}
+
+.ButtonToPrintPopUp {
+    position: absolute;
+    top: 50%;
+    left: 90%
+}
+
+.ButtonToEntirePage {
+    position: absolute;
+    top: 50%;
+    right: 90%
+}
+.Page {
+    position : relative;
+    width : 21cm;
+    height : 29.7cm;
+    margin : auto;
+    padding : 0;   
+}
+
+.NonePage {
+    display: none;
+}
+
+.ContractFrame {
+    width : 17.6cm;
+    margin : 0 auto;
+    word-spacing: 4px;
+}
+
+.SetPositionAbsoluteForAlignCenter {
+    position: absolute;
+    top: 0.5cm;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.ContractHeader {
+    width : 17.6cm;
+    height : 2cm;
+    margin : 0 auto;
+    
+    display : flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.ContractFooter {
+    width : 17.6cm;
+    height : 2cm;
+    margin : 0 auto;
+    
+    display : flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.ContractHeader span {
+    width : 5.5cm;
+}
+
+.ContractBody { 
+    margin : auto 0.6cm;
+    position: relative;
+}
+
+.ContractBody > * {
+    margin : 0.5cm auto;
+}
+
+.ContractLogo {
+    width: 4cm;
+    height: 2cm;
+    z-index: -1;
+}
+
+.ContractLogo img {
+    width: 4cm;
+    height: 2cm;
+}
+
+.AddBorder {
+    height : 24.3cm;
+    border: 1px solid black;
+}
+
+.VscCheckRed {
+    font-size: large;
+    color:rgb(250, 39, 88);
+}
+
+.VscCheckAbsolute {
+    position : absolute;
+    top : 0%;
+    left : 0%;
+}
+
+.VscCheckBlue {
+    font-size: large;
+    color: royalblue;
+}
+
+.SetColorRed {
+    color: rgb(250, 39, 88);
+}
+
+.SetColorGray {
+    color: gainsboro;
+}

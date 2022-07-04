@@ -1,0 +1,54 @@
+
+.CompareConfirmHeading h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.CompareConfirmDate {
+    text-decoration: underline;
+    text-align: center;
+    font-size: smaller;
+    z-index: -1;
+}
+
+.CompareConfirm table {
+    /* 테이블 문자의 기본 수치는 small에 bold */
+    width: 100%;
+    border-collapse: collapse;
+    font-size: small;
+    font-weight: bold;
+}
+
+.CompareConfirm td {
+    border: 0.1px solid black;
+    padding-left: 0.3cm;
+    padding-right: 0.3cm;
+}
+
+.CompareConfirm table .RedBorderBox {
+    border: 2px solid rgb(250, 39, 88);
+}
+.CompareConfirm caption {
+    text-align: left;
+    margin-bottom: 0.1cm;
+}
+
+.CompareConfirm .TableHeader {
+    text-align: center;
+    background-color: rgb(228, 227, 227);
+}
+
+.CompareConfirmTableThird {
+    font-size: small;
+    font-weight: bold;
+    line-height: 0.55cm;
+}
+
+.CompareConfirmTableFourth {
+    width: 50%;
+    padding-left:50%;
+}
+
+.CompareConfirmTableFourth .TableHeader {
+    font-weight: lighter;
+}
