@@ -4,7 +4,7 @@ import { VscCheck } from 'react-icons/vsc';
 import './CompareConfirm.css';
 import SignatureVerifyArea from '../../signature/SignatureVerifyArea';
 
-const CompareConfirmTableThird = ({canvasStore, setCanvasStore}) => {
+const CompareConfirmTableThird = () => {
     return (
         <div className='CompareConfirm CompareConfirmTableThird'>
             <table>
@@ -27,7 +27,7 @@ const CompareConfirmTableThird = ({canvasStore, setCanvasStore}) => {
                                 fontWeight: "lighter"
                             }}>
                                 &nbsp;설 명 &nbsp;&nbsp;&nbsp;들 었 음&nbsp;
-                                <SignatureVerifyArea drawIndex={0} canvasStore={canvasStore} setCanvasStore={setCanvasStore}/>
+                                <SignatureVerifyArea drawBoxIndex={0}/>
                             </span>
                             ) <span className='SetColorRed'>← 보험계약자 자필 덧칠(쓰기)</span>
                         </p>
@@ -49,7 +49,7 @@ const CompareConfirmTableThird = ({canvasStore, setCanvasStore}) => {
                                 fontWeight: "lighter"
                             }}>
                                 &nbsp;확 인 &nbsp;&nbsp;&nbsp;하 였 음&nbsp;
-                                <SignatureVerifyArea drawIndex={1} canvasStore={canvasStore} setCanvasStore={setCanvasStore}/>
+                                <SignatureVerifyArea drawBoxIndex={1}/>
                             </span>
                             ) <span className='SetColorRed'>← 보험계약자 자필 덧칠(쓰기)</span>
                         </p>

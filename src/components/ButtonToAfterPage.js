@@ -3,14 +3,19 @@ import './Contract.css';
 
 
 const ButtonToAfterPage = ({ pageIndex, setPageIndex, isEntirePage }) => {
-    const onClick = (e) => {
+   
+    const goToAfterPage = (e) => {
         setPageIndex(pageIndex + 1)
         e.preventDefault();
     }
 
+    const isPageAfterClickable = () => {
+        return pageIndex <3 && !isEntirePage; 
+    }
+
     return (
         <div className="ContractButton ButtonToAfterPage">
-            {(pageIndex < 3 && !isEntirePage) ? <button onClick={onClick}>다음 페이지</button> : false}
+            {(isPageAfterClickable()) ? <button onClick={goToAfterPage}>다음 페이지</button> : false}
         </div>
     );
 }

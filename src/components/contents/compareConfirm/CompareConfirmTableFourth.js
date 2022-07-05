@@ -4,7 +4,7 @@ import { VscCheck } from 'react-icons/vsc';
 import './CompareConfirm.css';
 import SignatureVerifyArea from '../../signature/SignatureVerifyArea';
 
-const CompareConfirmTableFourth = ({canvasStore, setCanvasStore}) => {
+const CompareConfirmTableFourth = () => {
     return (
         <div className='CompareConfirm CompareConfirmTableFourth'>
             <table style={{ height: "3cm" }}>
@@ -19,18 +19,18 @@ const CompareConfirmTableFourth = ({canvasStore, setCanvasStore}) => {
                             borderRight: "0.1px solid black",
                             position: "relative"
                             }}>
-                            <VscCheck className='VscCheckRed VscCheckAbsolute' />
+                            <VscCheck className='VscCheckRed VscCheckPositionAbsoluteForAlignTopLeft' />
                             <span style={{ position: "relative" }}>
-                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<SignatureVerifyArea drawIndex={2} canvasStore={canvasStore} setCanvasStore={setCanvasStore}/>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<SignatureVerifyArea drawBoxIndex={2}/>
                             </span>
                         </td>
                         <td className='RedBorderBox' style={{
                             borderLeft: "0.1px solid black",
                             position: "relative"
                             }}>
-                            <VscCheck className='VscCheckRed VscCheckAbsolute' />
+                            <VscCheck className='VscCheckRed VscCheckPositionAbsoluteForAlignTopLeft' />
                             <span style={{ position: "relative" }}>
-                                &emsp;&emsp;&emsp;&emsp;&emsp;<SignatureVerifyArea drawIndex={3} canvasStore={canvasStore} setCanvasStore={setCanvasStore}/>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;<SignatureVerifyArea drawBoxIndex={3}/>
                             </span>
                         </td>
                 </tr>

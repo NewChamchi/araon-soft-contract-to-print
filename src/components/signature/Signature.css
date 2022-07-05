@@ -21,13 +21,12 @@
 
 .SignatureButtons > * {
   width : 100px;
-  height : 25px;
+  height : 50px;
 }
 
 .SignaturePopUp {
-  display: flex;
-  width : 700px;
-  height : 300px;
+  width : 50%;
+  height : 25%;
 }
 
 .SignatureVerifyArea {

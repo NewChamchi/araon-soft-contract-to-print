@@ -61,7 +61,6 @@
     position : relative;
 }
 
-.TextAlignRightAndColorGray {
+.TextAlignRight {
     text-align: right;
-    color: gainsboro;
 }

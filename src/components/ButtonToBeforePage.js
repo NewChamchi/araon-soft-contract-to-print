@@ -1,18 +1,25 @@
-import React from 'react';
-import './Contract.css';
-
+import React from "react";
+import "./Contract.css";
 
 const ButtonToBeforePage = ({ pageIndex, setPageIndex, isEntirePage }) => {
-    const onClick = (e) => {
-        setPageIndex(pageIndex - 1)
-        e.preventDefault();
-    }
+  const goToBeforePage = (e) => {
+    setPageIndex(pageIndex - 1);
+    e.preventDefault();
+  };
 
-    return (
-        <div className="ContractButton ButtonToBeforePage">
-            {(pageIndex > 1 && !isEntirePage) ? <button onClick={onClick}>이전 페이지</button> : false}
-        </div>
-    );
-}
+  const isPageBeforeClickable = () => {
+    return pageIndex > 1 && !isEntirePage;
+  };
+
+  return (
+    <div className="ContractButton ButtonToBeforePage">
+      {isPageBeforeClickable() ? (
+        <button onClick={goToBeforePage}>이전 페이지</button>
+      ) : (
+        false
+      )}
+    </div>
+  );
+};
 
 export default ButtonToBeforePage;
