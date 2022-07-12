@@ -4,6 +4,10 @@
     text-decoration: underline;
 }
 
+.CompareConfirmForm > * {
+    margin-bottom: 0.45cm;
+}
+
 .CompareConfirmDate {
     text-decoration: underline;
     text-align: center;

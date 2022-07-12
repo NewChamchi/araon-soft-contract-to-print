@@ -16,7 +16,6 @@ import FulfillConfirmTableFooter from './components/contents/fulfillConfirm/Fulf
 import AgreementHeader from './components/contents/agreement/AgreementHeader';
 import AgreementHeading from './components/contents/agreement/AgreementHeading';
 import AgreementForm from './components/contents/agreement/AgreementForm';
-import ContextIntegratedProvider from './contexts/ContextIntegratedProvider';
 import CompareConfirmForm from './components/contents/compareConfirm/CompareConfirmForm';
 import FulfillConfirmForm from './components/contents/fulfillConfirm/FulfillConfirmForm';
 import ButtonsHeaderBar from './components/ButtonsHeaderBar';
@@ -27,7 +26,7 @@ const App = () => {
   const [pageIndex, setPageIndex] = useState(1);
   const entirePageRef = useRef();
   return (
-    <div>
+    <div className="AraonContractToPrint">
       <ButtonsHeaderBar
         isEntirePage={isEntirePage}
         setIsEntirePage={setIsEntirePage}
@@ -37,19 +36,17 @@ const App = () => {
       <br />
       <br />
       <br />
-      <ContextIntegratedProvider>
-        {isEntirePage ? (
-          <PageEntire entirePageRef={entirePageRef} />
-        ) : pageIndex == 1 ? (
-          <PageFirst />
-        ) : pageIndex == 2 ? (
-          <PageSecond />
-        ) : pageIndex == 3 ? (
-          <PageThird />
-        ) : (
-          false
-        )}
-      </ContextIntegratedProvider>
+      {isEntirePage ? (
+        <PageEntire entirePageRef={entirePageRef} />
+      ) : pageIndex === 1 ? (
+        <PageFirst />
+      ) : pageIndex === 2 ? (
+        <PageSecond />
+      ) : pageIndex === 3 ? (
+        <PageThird />
+      ) : (
+        false
+      )}
 
       {isEntirePage ? (
         <ButtonsFooterBar entirePageRef={entirePageRef} />
