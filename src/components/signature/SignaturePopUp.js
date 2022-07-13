@@ -1,9 +1,10 @@
-import React, { useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 import './Signature.css';
 import SignatureButtons from './SignatureButtons';
 import SignatureCanvas from 'react-signature-canvas';
 import Modal from 'react-modal';
 import DrawContext from '../../contexts/DrawContext';
+import NameAndSignatureContext from '../../contexts/NameAndSignatureContext';
 
 const modalWindowStyles = {
   content: {
@@ -18,21 +19,47 @@ const modalWindowStyles = {
 };
 
 /* 팝업창 */
-const SignaturePopUp = ({ drawBoxIndex, openPopUp, closePopUp }) => {
-  const SignatureCanvasRef = useRef();
-  const { state, actions } = useContext(DrawContext);
+const SignaturePopUp = ({
+  SignatureCanvasRef,
+  drawBoxIndex,
+  openPopUp,
+  closePopUp,
+  IndicateDrawBoxBelongTo,
+}) => {
+  const { state: drawState, actions: drawActions } = useContext(DrawContext);
+  const { state: nameAndSignatureState, actions: nameAndSignatureActions } =
+    useContext(NameAndSignatureContext);
 
   const submitDrawSignature = (e) => {
-    actions.setCanvasStore([
-      ...state.canvasStore.slice(0, drawBoxIndex),
+    drawActions.setCanvasStore([
+      ...drawState.canvasStore.slice(0, drawBoxIndex),
       {
-        ...state.canvasStore[drawBoxIndex],
+        ...drawState.canvasStore[drawBoxIndex],
         base64Data: SignatureCanvasRef.current
           .getCanvas()
           .toDataURL('image/png'),
       },
-      ...state.canvasStore.slice(drawBoxIndex + 1, state.canvasStore.length),
+      ...drawState.canvasStore.slice(
+        drawBoxIndex + 1,
+        drawState.canvasStore.length
+      ),
     ]);
+
+    if ('name' === IndicateDrawBoxBelongTo(drawBoxIndex)) {
+      nameAndSignatureActions.setBase64NameAndSignatureStore({
+        ...nameAndSignatureState.base64NameAndSignatureStore,
+        base64Name: SignatureCanvasRef.current
+          .getCanvas()
+          .toDataURL('image/png'),
+      });
+    } else if ('signature' === IndicateDrawBoxBelongTo(drawBoxIndex)) {
+      nameAndSignatureActions.setBase64NameAndSignatureStore({
+        ...nameAndSignatureState.base64NameAndSignatureStore,
+        base64Signature: SignatureCanvasRef.current
+          .getCanvas()
+          .toDataURL('image/png'),
+      });
+    }
     closePopUp();
   };
 
