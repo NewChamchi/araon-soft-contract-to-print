@@ -68,6 +68,11 @@ const SignaturePopUp = ({
     closePopUp();
   };
 
+  const eraseDrawSignature = (e) => {
+    SignatureCanvasRef.current.clear();
+    e.preventDefault();
+  };
+
   return (
     <div className="SignaturePopUp">
       <Modal
@@ -90,6 +95,7 @@ const SignaturePopUp = ({
           <SignatureButtons
             submitDrawSignature={submitDrawSignature}
             cancelDrawSignature={cancelDrawSignature}
+            eraseDrawSignature={eraseDrawSignature}
           />
         </form>
       </Modal>
